@@ -7,6 +7,7 @@ const input = document.getElementById("input");
 const storageKey = "expr";
 const fineClass = "fine";
 const wrongClass = "wrong";
+const defaultExpression = "3:00:00 / 42.195";
 js.then(js => {
   const update = () => {
     const value = document.getElementById("input").value;
@@ -18,7 +19,7 @@ js.then(js => {
       output.classList.remove(wrongClass);
     } catch(exception) {
       console.log(exception);
-      const empytStringMessage = `Enter the expression. <nobr>"45:00 / 1:52 * 3.921"</nobr> for example`;
+      const empytStringMessage = `Enter the expression. <nobr>"${defaultExpression}"</nobr> for example`;
       output.innerHTML = value.length == 0 ? empytStringMessage : errorDebriefing(exception.error) || exception.description;
       output.classList.add(wrongClass);
       output.classList.remove(fineClass);
@@ -29,4 +30,4 @@ js.then(js => {
   input.addEventListener("keyup", update);
 });
 let storedValue = localStorage.getItem(storageKey);
-input.value = storedValue == 0 ? "45:00 / 1:52 * 3.921" : storedValue;
+input.value = +storedValue == 0 ? defaultExpression : storedValue;
