@@ -18,9 +18,8 @@ js.then(js => {
       output.classList.add(fineClass);
       output.classList.remove(wrongClass);
     } catch(exception) {
-      console.log(exception);
       const empytStringMessage = `Enter the expression. <nobr>"${defaultExpression}"</nobr> for example`;
-      output.innerHTML = value.length == 0 ? empytStringMessage : errorDebriefing(exception.error) || exception.description;
+      output.innerHTML = value.length === 0 ? empytStringMessage : errorDebriefing(exception.error) || exception.description;
       output.classList.add(wrongClass);
       output.classList.remove(fineClass);
     }
