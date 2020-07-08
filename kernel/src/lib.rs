@@ -44,25 +44,35 @@ fn convert_error_to_jsvalue(err: Error) -> JsValue {
 #[wasm_bindgen(catch)]
 pub fn eval_string(expression: String) -> std::result::Result<String, JsValue> {
     match eval_expression(&expression) {
-        Ok(result) => {
-            let mut s = (result.0 * 1000f64).round() / 1000f64;
+        Ok((result, degre)) => {
+            let mut s = (result * 1000f64).round() / 1000f64;
             Ok(
-                if result.1 == 1. {
-                    let sign = if s > 0f64 { "" } else { "-" };
-                    s = s.abs();
-                    let h = (s / 3600f64).floor() as i64;
-                    s -= (h * 3600) as f64;
-                    let m = (s / 60f64).floor() as i64;
-                    s -= (m * 60) as f64;
-                    truncate(
-                        if h > 0 {
-                            format!("{}{}:{:02}:{:07.4}", sign, h, m, s)
-                        } else if m > 0 {
-                            format!("{}{}:{:07.4}", sign, m, s)
-                        } else {
-                            format!("{}{:.4}", sign, s)
-                        }
-                    )
+                if degre == 1. {
+                    if result == f64::INFINITY {
+                        "eternity".into()
+                    } else if result == -f64::INFINITY {
+                        "negative eternity".into()
+                    } else {
+                        let sign = if s > 0f64 { "" } else { "-" };
+                        s = s.abs();
+                        let h = (s / 3600f64).floor() as i64;
+                        s -= (h * 3600) as f64;
+                        let m = (s / 60f64).floor() as i64;
+                        s -= (m * 60) as f64;
+                        truncate(
+                            if h > 0 {
+                                format!("{}{}:{:02}:{:07.4}", sign, h, m, s)
+                            } else if m > 0 {
+                                format!("{}{}:{:07.4}", sign, m, s)
+                            } else {
+                                format!("{}{:.4}", sign, s)
+                            }
+                        )
+                    }
+                } else if result == f64::INFINITY {
+                    "infinity".into()
+                } else if result == -f64::INFINITY {
+                    "negative infinity".into()
                 } else {
                     format!("{}", s)
                 }
