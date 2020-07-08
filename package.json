@@ -9,7 +9,7 @@
     "build": "rm dist -rf && webpack"
   },
   "dependencies": {
-    "@bopohob/timecalc": "^0.1.0",
+    "@bopohob/timecalc": "^1",
     "wasm-loader": "^1.3.0"
   },
   "devDependencies": {

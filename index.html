@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Time calculator</title>
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Timecalc — seconds is numbers too" />
+    <meta property="og:title" content="Now seconds is numbers too" />
+    <meta property="og:description" content="Here you can perfom simple calculation to find pacetime for marathon or gasoline volume for virtual racing or what ever you want" />
     <meta property="og:url" content="https://timecalc.org/" />
     <meta property="og:site_name" content="Time calculator" />
     <meta property="og:image" content="https://timecalc.org/android-chrome-512x512.png" />
@@ -24,7 +25,7 @@
       href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
     <style>
 body {
-  margin-top: 50vh;
+  margin-top: 20vh;
   transform: translateY(-50%);
   display: grid;
   grid-template-columns: 50vw auto;
@@ -37,31 +38,34 @@ h1 {
 
   text-align: center;
 }
-input {
+div {
   grid-row-start: 2;
   grid-column-start: 1;
 
   text-align: right;
-  border-radius: 10px;
+  border-bottom: solid 2px;
   padding: 5px;
   margin-left: 10vw;
 
   font-size: 170%;
-  font-family: "Computer Modern Typewriter", sans-serif;
+  appearance: textfield;
+  white-space: nowrap;
+  overflow: hidden;
+}
+div:::nth-child(0) {
+  color:red;
 }
 p {
   grid-row-start: 2;
   grid-column-start: 2;
 
-  margin: 7px 0px 0px 5px;
+  margin: 5px 0px 0px 5px;
   font-size: 170%;
   overflow: visible;
+  max-height: 60px;
 }
 p.fine::before {
   content: " =";
-}
-p.wrong {
-  max-height: 63px;
 }
     </style>
   </head>
@@ -81,7 +85,7 @@ p.wrong {
 <noscript><div><img src="https://mc.yandex.ru/watch/65476672" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
     <h1>Time calculator</h1>
-    <input id="input" type="text" />
+    <div contenteditable="true" id="input" type="text"></div>
     <p id="output">loading...</p>
     <script src="./index.js"></script>
   </body>

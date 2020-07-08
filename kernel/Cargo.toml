@@ -1,6 +1,6 @@
 [package]
 name = "timecalc"
-version = "0.1.1"
+version = "1.0.1"
 authors = ["OKOPOK <self@BOPOHOB.ru>"]
 edition = "2018"
 
