@@ -6,7 +6,7 @@
   "author": "BOPOHOB",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "rm dist -rf && webpack"
+    "build": "rm dist/* && webpack"
   },
   "dependencies": {
     "@bopohob/timecalc": "^1",
