@@ -64,12 +64,12 @@ const fineClass = 'fine';
 const wrongClass = 'wrong';
 const defaultExpression = '3:00:00 / 42.195';
 let storedValue = localStorage.getItem(storageKey);
-input.innerHTML = +storedValue == 0 ? defaultExpression : storedValue;
+input.value = +storedValue == 0 ? defaultExpression : storedValue;
 Promise.all([js, i18nPrep]).then(res => {
   document.getElementsByTagName('h1')[0].innerText = i18next.t('title');
   const kernel = res[0];
   const update = () => {
-    const value = document.getElementById('input').innerHTML;
+    const value = document.getElementById('input').value;
     localStorage.setItem(storageKey, value);
     const output = document.getElementById('output');
     try {
