@@ -63,8 +63,12 @@ const storageKey = 'expr';
 const fineClass = 'fine';
 const wrongClass = 'wrong';
 const defaultExpression = '3:00:00 / 42.195';
-let storedValue = localStorage.getItem(storageKey);
+const storedValue = localStorage.getItem(storageKey);
 input.value = +storedValue == 0 ? defaultExpression : storedValue;
+const arg = window.location.search.split(/[?&]e\=/);
+if (arg.length > 1) {
+  input.value = arg[1].split("&")[0];
+}
 Promise.all([js, i18nPrep]).then(res => {
   document.getElementsByTagName('h1')[0].innerText = i18next.t('title');
   const kernel = res[0];
