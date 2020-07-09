@@ -1,0 +1,21 @@
+{
+    "FactorialError": "Numeric fail while factorial computation",
+
+    "TooManyOperands": "Too many operands left at the end of expression",
+    "MismatchedLParen": "`Mismatched left parenthesis at token {{id}}",
+    "MismatchedRParen": "`Mismatched right parenthesis at token {{id}}",
+    "UnexpectedComma": "Unexpected comma at token {{id}}",
+    "NotEnoughOperands": "Missing operands at token {{id}}",
+
+    "UnexpectedToken": "Unexpected token in position {{id}}",
+    "MissingRParen": "Missing right parenthesis",
+    "MissingRParens": "Missing {{count}} right parentheses",
+    "MissingArgument": "Missing argument at the end of expression",
+
+    "UnknownFunction": "{{name}} function is unknown",
+    "NumberArgs": "{{name}} require {{args}} argument",
+    "NumberArgs_plural": "{{name}} require {{args}} arguments",
+
+    "EmptyStringMessage": "Enter the expression. <nobr>\"{{example}}\"</nobr> for example",
+    "title": "Time calculator"
+}

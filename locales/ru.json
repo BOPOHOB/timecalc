@@ -1,0 +1,21 @@
+{
+    "FactorialError": "Невозможно вычислить факториал",
+
+    "TooManyOperands": "Не для всех операторов заданы аргументы",
+    "MismatchedLParen": "Закрывающих скобочек больше чем открывающих",
+    "MismatchedRParen": "Открывающих скобочек больше чем закрывающих",
+    "UnexpectedComma": "Лишняя точка",
+    "NotEnoughOperands": "Missing operands at token {{id}}",
+
+    "UnexpectedToken": "Unexpected token in position {{id}}",
+    "MissingRParen": "Открывающих скобочек больше чем закрывающих",
+    "MissingRParens": "Открывающих скобочек на {{count}} больше чем закрывающих",
+    "MissingArgument": "Missing argument at the end of expression",
+
+    "UnknownFunction": "Функция {{name}} не определена",
+    "NumberArgs": "Функция {{name}} требует {{args}} аргумент",
+    "NumberArgs_plural": "Функция {{name}} требует {{args}} аргумента",
+
+    "EmptyStringMessage": "Введите выражение. Например <nobr>\"{{example}}\"</nobr>",
+    "title": "Калькулятор времени"
+}

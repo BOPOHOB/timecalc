@@ -12,6 +12,7 @@ module.exports = {
       patterns: [
         { from: 'favicon_package_v0.16', to: '' },
         { from: 'index.html', to: '' },
+        { from: 'locales', to: 'locales' },
       ],
     }),
   ],
